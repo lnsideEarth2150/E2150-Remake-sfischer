@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Earth 2150" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Server - Debug">
+				<Option platforms="Windows;" />
+				<Option output="bin/Debug/Earth2150-Server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="ws2_32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+			<Target title="Server - Release">
+				<Option platforms="Windows;" />
+				<Option output="bin/Release/Earth2150-Server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="ws2_32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+			<Target title="Server - VS - Debug">
+				<Option output="bin/Debug/Earth 2150 VS" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/DebugVS/" />
+				<Option type="1" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/Zi" />
+					<Add option="/D_DEBUG" />
+					<Add option="/DWIN32" />
+					<Add option="/DNOMINMAX" />
+				</Compiler>
+				<Linker>
+					<Add option="/DEBUG" />
+					<Add library="ws2_32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+			<Target title="Server - VS - Release">
+				<Option output="bin/Release/Earth 2150 VS" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/ReleaseVS/" />
+				<Option type="1" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/MT" />
+					<Add option="/arch:SSE" />
+					<Add option="/GS" />
+					<Add option="/Ox" />
+					<Add option="/DNDEBUG" />
+					<Add option="/DWIN32" />
+					<Add option="/DNOMINMAX" />
+				</Compiler>
+				<Linker>
+					<Add library="ws2_32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+			<Target title="Client - Debug">
+				<Option platforms="Windows;" />
+				<Option output="../earth2150client/bin/Debug/Earth2150-Client" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="-t" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option='-isystem &quot;$(#irrlicht.include)&quot;' />
+					<Add directory="../earth2150client/include" />
+					<Add directory="$(#irrlicht)/include" />
+				</Compiler>
+				<Linker>
+					<Add library="ws2_32" />
+					<Add library="winmm" />
+					<Add library="Irrlicht" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="gdi32" />
+					<Add directory="$(#irrlicht.lib)" />
+				</Linker>
+			</Target>
+			<Target title="Linux - Server - Debug">
+				<Option platforms="Unix;" />
+				<Option output="bin/Debug/Earth2150-Server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="rt" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+			<Target title="Linux - Server - Release">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/Earth2150-Server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="rt" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+			<Target title="Linux - Client - Debug">
+				<Option platforms="Unix;" />
+				<Option output="../earth2150client/bin/Debug/Earth2150-Client" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="-t" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option='-isystem &quot;$(#irrlicht.include)&quot;' />
+					<Add directory="../earth2150client/include" />
+					<Add directory="$(#irrlicht)/include" />
+				</Compiler>
+				<Linker>
+					<Add library="Irrlicht" />
+					<Add library="pthread" />
+					<Add directory="$(#irrlicht.lib)" />
+				</Linker>
+			</Target>
+			<Target title="Linux - Client - Release">
+				<Option platforms="Unix;" />
+				<Option output="../earth2150client/bin/Release/Earth2150-Client" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../." />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O2" />
+					<Add option='-isystem &quot;$(#irrlicht.include)&quot;' />
+					<Add option="-DNDEBUG" />
+					<Add directory="../earth2150client/include" />
+					<Add directory="$(#irrlicht)/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="Irrlicht" />
+					<Add library="pthread" />
+					<Add directory="$(#irrlicht.lib)" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Weffc++" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="include" />
+			<Add directory="../tf/include" />
+			<Add directory="../ff/include" />
+		</Compiler>
+		<Unit filename="../earth2150client/include/GUI/BasicGameInterface.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/GUIElementEventHandler.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/IGUI.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/IGUIWindow.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/IngameGUI.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/ResearchWindow.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/GUI/ResizeEvent.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/AbstractGameState.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/EngineData.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/GameState/GameStateFactory.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/GameState/MainMenu.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/GameState/ProfileSelect.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/GameState/TestGameState.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/MapGlobalLight.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/MapMarker.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/MapMarkerManager.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/MousePicker.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/VisualMap.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/client/VisualMapPart.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/config/ClientConfig.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/CompatibleScreenRenderer.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/DeferredShadingScreenRenderer.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/IScreenRenderer.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/LightData/SPointLightData.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/LightManager.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/RenderViewport.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/ScreenRendererHelper.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/ShaderCallback/GlobalLightCallback.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/ShaderCallback/PointLightCallback.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/renderer/ShaderCallback/TerrainShaderCallback.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/include/tests/FlyingObjects.h">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/GUI/BasicGameInterface.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/GUI/GUIElementEventHandler.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/GUI/IngameGUI.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/GUI/ResearchWindow.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/AbstractGameState.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/EngineData.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/GameState/GameStateFactory.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/GameState/MainMenu.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/GameState/ProfileSelect.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/GameState/TestGameState.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/MapGlobalLight.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/MapMarker.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/MapMarkerManager.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/MousePicker.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/VisualMap.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/VisualMapPart.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/client/main.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/config/ClientConfig.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/renderer/CompatibleScreenRenderer.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/renderer/DeferredShadingScreenRenderer.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/renderer/LightManager.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/renderer/RenderViewport.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/renderer/ScreenRendererHelper.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../earth2150client/src/tests/FlyingObjects.cpp">
+			<Option target="Client - Debug" />
+			<Option target="Linux - Client - Debug" />
+			<Option target="Linux - Client - Release" />
+		</Unit>
+		<Unit filename="../ff/include/ff/JumpPointSearch.h" />
+		<Unit filename="../ff/include/ff/MinHeap.h" />
+		<Unit filename="../ff/src/ff/JumpPointSearch.cpp" />
+		<Unit filename="../tf/include/tf/file.h" />
+		<Unit filename="../tf/include/tf/network.h" />
+		<Unit filename="../tf/include/tf/thread.h" />
+		<Unit filename="../tf/include/tf/time.h" />
+		<Unit filename="../tf/src/tf/file.cpp" />
+		<Unit filename="../tf/src/tf/network.cpp" />
+		<Unit filename="../tf/src/tf/thread.cpp" />
+		<Unit filename="../tf/src/tf/time.cpp" />
+		<Unit filename="include/Building/Building.h" />
+		<Unit filename="include/Building/BuildingChassis.h" />
+		<Unit filename="include/Building/BuildingDirection.h" />
+		<Unit filename="include/Building/BuildingGround.h" />
+		<Unit filename="include/Building/BuildingReference.h" />
+		<Unit filename="include/Building/GlobalBuildingList.h" />
+		<Unit filename="include/Event/IEntityEventReceiver.h" />
+		<Unit filename="include/Map/HeightMap.h" />
+		<Unit filename="include/Map/IMapBuildingsObserver.h" />
+		<Unit filename="include/Map/Map.h" />
+		<Unit filename="include/Map/MapBitLayer.h" />
+		<Unit filename="include/Map/MapBuildings.h" />
+		<Unit filename="include/Map/MapCircleArea.h" />
+		<Unit filename="include/Map/MapManipulator.h" />
+		<Unit filename="include/Map/MapPosition.h" />
+		<Unit filename="include/Map/MapPositionFloat.h" />
+		<Unit filename="include/Map/MapPositionIterator.h" />
+		<Unit filename="include/Map/MapRectArea.h" />
+		<Unit filename="include/Map/MapViewerManager.h" />
+		<Unit filename="include/Network/NetworkPacket.h" />
+		<Unit filename="include/Network/PlayerNetworkConnection.h" />
+		<Unit filename="include/Network/SendBuffer.h" />
+		<Unit filename="include/Network/TestServer.h" />
+		<Unit filename="include/PathFinder/INavigator.h" />
+		<Unit filename="include/PathFinder/NavigatorFactory.h" />
+		<Unit filename="include/PathFinder/TNavigator.h" />
+		<Unit filename="include/PathFinder/TSearcher.h" />
+		<Unit filename="include/Player/PlayerBuildingList.h" />
+		<Unit filename="include/Player/PlayerRelationTable.h" />
+		<Unit filename="include/Tests/PathFinderTester.h">
+			<Option target="Server - Debug" />
+			<Option target="Server - Release" />
+			<Option target="Linux - Server - Debug" />
+			<Option target="Linux - Server - Release" />
+		</Unit>
+		<Unit filename="include/Unit/MovingUnit.h" />
+		<Unit filename="include/Unit/Unit.h" />
+		<Unit filename="include/Unit/UnitChassis.h" />
+		<Unit filename="include/Unit/UnitChassisList.h" />
+		<Unit filename="include/Util/MemoryBlock.h" />
+		<Unit filename="include/Util/MemoryHelper.h" />
+		<Unit filename="include/Util/ReferenceCounter.h" />
+		<Unit filename="include/Util/UIDManager.h" />
+		<Unit filename="include/e2150/AStar.h" />
+		<Unit filename="include/e2150/AStarNode.h" />
+		<Unit filename="include/e2150/BuildingUpdater.h" />
+		<Unit filename="include/e2150/Entity.h" />
+		<Unit filename="include/e2150/Faction.h" />
+		<Unit filename="include/e2150/FactionManager.h" />
+		<Unit filename="include/e2150/GameContent.h" />
+		<Unit filename="include/e2150/HumanPlayer.h" />
+		<Unit filename="include/e2150/JPSNavigator.h" />
+		<Unit filename="include/e2150/MapUpdateCore.h" />
+		<Unit filename="include/e2150/Player.h" />
+		<Unit filename="include/e2150/Utils.h" />
+		<Unit filename="include/e2150/main.h">
+			<Option target="Server - Debug" />
+			<Option target="Server - Release" />
+			<Option target="Server - VS - Debug" />
+			<Option target="Server - VS - Release" />
+			<Option target="Linux - Server - Debug" />
+			<Option target="Linux - Server - Release" />
+		</Unit>
+		<Unit filename="src/Building/BuildingChassis.cpp" />
+		<Unit filename="src/Building/BuildingDirection.cpp" />
+		<Unit filename="src/Building/BuildingGround.cpp" />
+		<Unit filename="src/Building/BuildingReference.cpp" />
+		<Unit filename="src/Building/GlobalBuildingList.cpp" />
+		<Unit filename="src/Map/HeightMap.cpp" />
+		<Unit filename="src/Map/Map.cpp" />
+		<Unit filename="src/Map/MapBitLayer.cpp" />
+		<Unit filename="src/Map/MapBuildings.cpp" />
+		<Unit filename="src/Map/MapCircleArea.cpp" />
+		<Unit filename="src/Map/MapManipulator.cpp" />
+		<Unit filename="src/Map/MapPosition.cpp" />
+		<Unit filename="src/Map/MapPositionFloat.cpp" />
+		<Unit filename="src/Map/MapRectArea.cpp" />
+		<Unit filename="src/Map/MapViewerManager.cpp" />
+		<Unit filename="src/Network/PlayerNetworkConnection.cpp" />
+		<Unit filename="src/Network/SendBuffer.cpp" />
+		<Unit filename="src/Network/TestServer.cpp" />
+		<Unit filename="src/PathFinder/NavigatorFactory.cpp" />
+		<Unit filename="src/PathFinder/TNavigator.cpp" />
+		<Unit filename="src/PathFinder/TSearcher.cpp" />
+		<Unit filename="src/Player/PlayerBuildingList.cpp" />
+		<Unit filename="src/Player/PlayerRelationTable.cpp" />
+		<Unit filename="src/Tests/PathFinderTester.cpp">
+			<Option target="Server - Debug" />
+			<Option target="Server - Release" />
+			<Option target="Linux - Server - Debug" />
+			<Option target="Linux - Server - Release" />
+		</Unit>
+		<Unit filename="src/Unit/MovingUnit.cpp" />
+		<Unit filename="src/Unit/Unit.cpp" />
+		<Unit filename="src/Unit/UnitChassis.cpp" />
+		<Unit filename="src/Unit/UnitChassisList.cpp" />
+		<Unit filename="src/Util/MemoryHelper.cpp" />
+		<Unit filename="src/Util/UIDManager.cpp" />
+		<Unit filename="src/e2150/AStar.cpp" />
+		<Unit filename="src/e2150/AStarNode.cpp" />
+		<Unit filename="src/e2150/BuildingUpdater.cpp" />
+		<Unit filename="src/e2150/Entity.cpp" />
+		<Unit filename="src/e2150/Faction.cpp" />
+		<Unit filename="src/e2150/FactionManager.cpp" />
+		<Unit filename="src/e2150/HumanPlayer.cpp" />
+		<Unit filename="src/e2150/JPSNavigator.cpp" />
+		<Unit filename="src/e2150/MapUpdateCore.cpp" />
+		<Unit filename="src/e2150/Player.cpp" />
+		<Unit filename="src/e2150/main.cpp">
+			<Option target="Server - Debug" />
+			<Option target="Server - Release" />
+			<Option target="Server - VS - Debug" />
+			<Option target="Server - VS - Release" />
+			<Option target="Linux - Server - Debug" />
+			<Option target="Linux - Server - Release" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<editor_config active="1" use_tabs="1" tab_indents="1" tab_width="4" indent="4" eol_mode="0" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
